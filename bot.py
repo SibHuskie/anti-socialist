@@ -201,5 +201,47 @@ async def cry(ctx):
     msg.set_image(url="{}".format(random.choice(crylinks)))
     msg.add_field(name=":black_medium_square: EMOTE :black_medium_square: ", value="<@{}> is crying. ;-;".format(author.id))
     await client.say(embed=msg)
+
+# a?kiss <user>
+@client.command(pass_context=True)
+async def kiss(ctx, user: discord.Member = None):
+    author = ctx.message.author
+    msg = discord.Embed(colour=0x7c7c7c, description= "")
+    msg.title = ""
+    msg.set_footer(text=footer_text)
+    if user == None:
+        msg.add_field(name=error_img, value="Please mention someone you want to kiss.")
+    else:
+        msg.set_image(url="{}".format(random.choice(kisslinks)))
+        msg.add_field(name=":black_medium_square: EMOTE :black_medium_square: ", value="<@{}> got a kiss from <@{}>! owo what's this?".format(user.id, author.id))
+    await client.say(embed=msg)
+
+# a?cuddle <user>
+@client.command(pass_context=True)
+async def cuddle(ctx, user: discord.Member = None):
+    author = ctx.message.author
+    msg = discord.Embed(colour=0x7c7c7c, description= "")
+    msg.title = ""
+    msg.set_footer(text=footer_text)
+    if user == None:
+        msg.add_field(name=error_img, value="Please mention someone you want to cuddle.")
+    else:
+        msg.set_image(url="{}".format(random.choice(cuddlelinks)))
+        msg.add_field(name=":black_medium_square: EMOTE :black_medium_square: ", value="<@{}> cuddled <@{}>! Aww.".format(author.id, user.id))
+    await client.say(embed=msg)
+
+# a?pat <user>
+@client.command(pass_context=True)
+async def pat(ctx, user: discord.Member = None):
+    author = ctx.message.author
+    msg = discord.Embed(colour=0x7c7c7c, description= "")
+    msg.title = ""
+    msg.set_footer(text=footer_text)
+    if user == None:
+        msg.add_field(name=error_img, value="Please mention someone you want to pat.")
+    else:
+        msg.set_image(url="{}".format(random.choice(patlinks)))
+        msg.add_field(name=":black_medium_square: EMOTE :black_medium_square: ", value="<@{}> got a pat from <@{}>! uwu".format(user.id, author.id))
+    await client.say(embed=msg)
 ##################################
 client.run(os.environ['BOT_TOKEN'])
