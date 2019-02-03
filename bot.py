@@ -190,5 +190,16 @@ async def hug(ctx, user: discord.Member = None):
         msg.set_image(url="{}".format(random.choice(huglinks)))
         msg.add_field(name=":black_medium_square: EMOTE :black_medium_square: ", value="<@{}> got a hug from <@{}>! I ship it.".format(user.id, author.id))
     await client.say(embed=msg)
+
+# a?cry
+@client.command(pass_context=True)
+async def cry(ctx):
+    author = ctx.message.author
+    msg = discord.Embed(colour=0x7c7c7c, description= "")
+    msg.title = ""
+    msg.set_footer(text=footer_text)
+    msg.set_image(url="{}".format(random.choice(crylinks)))
+    msg.add_field(name=":black_medium_square: EMOTE :black_medium_square: ", value="<@{}> is crying. ;-;".format(author.id))
+    await client.say(embed=msg)
 ##################################
 client.run(os.environ['BOT_TOKEN'])
