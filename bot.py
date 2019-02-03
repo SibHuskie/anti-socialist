@@ -243,5 +243,58 @@ async def pat(ctx, user: discord.Member = None):
         msg.set_image(url="{}".format(random.choice(patlinks)))
         msg.add_field(name=":black_medium_square: EMOTE :black_medium_square: ", value="<@{}> got a pat from <@{}>! uwu".format(user.id, author.id))
     await client.say(embed=msg)
+
+##############################################################FUN#####################################################################
+
+# a?roast <user>
+@client.command(pass_context=True)
+async def roast(ctx, user: discord.Member = None):
+    author = ctx.message.author
+    msg = discord.Embed(colour=0x7c7c7c, description= "")
+    msg.title = ""
+    msg.set_footer(text=footer_text)
+    if user == None:
+        msg.add_field(name=error_img, value="Please mention a user you want to roast.")
+    else:
+        a = ["<@{}>: Hey, <@{}>! I saw a piece of shit today... it reminded me of you.".format(author.id, user.id),
+             "<@{}>: You look familiar, <@{}>. Oh yeah! I see you in the trash.".format(author.id, user.id),
+             "<@{}>: Don't worry, <@{}>, you're not adopted. We're still searching for someone who wants you.".format(author.id, user.id),
+             "<@{}>: If I wanted to kill myself, I'd jump climb up your ego and jump in your IQ, <@{}>.".format(author.id, user.id),
+             "<@{}>: <@{}>, you are so stupid that you got hit by a parked car.".format(author.id, user.id),
+             "<@{}>: <@{}>, you are so fat and so old that when God created light, you were asked to move out of the way.".format(author.id, user.id),
+             "<@{}>: I heard <@{}> sucks so much that they were used as a vacuum cleaner.".format(author.id, user.id),
+             "<@{}>: Hey, <@{}>! Try to not spit when you talk, we don't need a public shower here.".format(author.id, user.id),
+             "<@{}>: I can't breathe when I see you, <@{}>... cause I'm suffocating from your bullshit.".format(author.id, user.id),
+             "<@{}>: <@{}>, you have the right to remain silent cause anything you say is probably going to be stupid anyway.".format(author.id, user.id),
+             "<@{}>: It's really hard to ignore <@{}>. Mostly cause they smell like shit.".format(author.id, user.id),
+             "<@{}>: <@{}>, did you fall from Heaven? Cause so did Satan.".format(author.id, user.id),
+             "<@{}>: <@{}>, were you sent to kill people? Cause your face is killing me.".format(author.id, user.id),
+             "<@{}>: If laughter is the best medicine, your face must be curing the world, <@{}>.".format(author.id, user.id),
+             "<@{}>: The only way you'll ever get laid is if you crawl up a chicken's ass and wait, <@{}>.".format(author.id, user.id),
+             "<@{}>: <@{}>, your family tree must be a cactus. Cause everyone on it is a prick.".format(author.id, user.id),
+             "<@{}>: <@{}>, save your breath, you'll need it to blow your date.".format(author.id, user.id),
+             "<@{}>: <@{}>, the zoo called. They are wondering how you got out of your cage?".format(author.id, user.id),
+             "<@{}>: <@{}>, you're so ugly that when you look in the mirror your reflection looks the away.".format(author.id, user.id),
+             "<@{}>: <@{}>, it's better to let someone think you're stupid than open your mouth and prove it.".format(author.id, user.id),
+             "<@{}>: I just stepped in something that is smarter than you, <@{}>... It smelled better too.".format(author.id, user.id),
+             "<@{}>: <@{}>, you're stupid just like your father when he thought he didn't need a condom.".format(author.id, user.id),
+             "<@{}>: <@{}> is so stupid that they stopped at a stop sign and waited for it to say go.".format(author.id, user.id),
+             "<@{}>: <@{}>, you're so ugly that you have to trick or treat over the phone.".format(author.id, user.id),
+             "<@{}>: <@{}>, you're so fat that your school photo was a double picture.".format(author.id, user.id),
+             "<@{}>: I'd like to kick <@{}> in the teeth but that would be an improvement for them.".format(author.id, user.id),
+             "<@{}>: <@{}> is so old that when they were in school there was no history class.".format(author.id, user.id),
+             "<@{}>: <@{}> is so stupid that they called me to ask me for my phone number.".format(author.id, user.id),
+             "<@{}>: <@{}>, at least my mom pretends to love me.".format(author.id, user.id),
+             "<@{}>: <@{}>, don't play hard to get when you are hard to want.".format(author.id, user.id),
+             "<@{}>: <@{}>, you're hating yourself too much for me to roast you.".format(author.id, user.id),
+             "<@{}>: <@{}>, I can't even call you ugly. Nature has beaten me to it.".format(author.id, user.id),
+             "<@{}>: People like you, <@{}>, are the reason God doens't talk to us anymore.".format(author.id, user.id),
+             "<@{}>: We all dislike you, <@{}>. But not quite enough to think about you.".format(author.id, user.id),
+             "<@{}>: <@{}>, you are a stupid.".format(author.id, user.id),
+             "<@{}>: <@{}>, I'd like to invite you to a nice, warming cup of shut the fuck up.".format(author.id, user.id),
+             "<@{}>: <@{}>, your mother might have told you, you can be whatever you want to but a cunt wasn't what she meant.".format(author.id, user.id),
+             "<@{}>: <@{}> is so fat, Thanos had to clap.".format(author.id, user.id)]
+        msg.add_field(name=":fire: Roast Machine", value="{}".format(random.choice(a)))
+    await client.say(embed=msg)
 ##################################
 client.run(os.environ['BOT_TOKEN'])
